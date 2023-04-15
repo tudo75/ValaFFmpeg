@@ -1,0 +1,3 @@
+[submodule "ffmpeg-vapi"]
+	path = ffmpeg-vapi
+	url = https://github.com/elsiehupp/ffmpeg-vapi.git

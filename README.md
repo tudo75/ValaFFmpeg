@@ -26,7 +26,14 @@ And from inside the cloned folder:
 	
 	meson setup build --prefix=/usr
 	ninja -v -C build
-	ninja -v -C build install
+	
+to install:
+
+    ninja -v -C build install
+
+or if you want to execute locally:
+
+    ./build/valaffmpeg
 
 ## Uninstall
 To uninstall and remove all added files, go inside the cloned folder and:

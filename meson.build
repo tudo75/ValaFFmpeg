@@ -1,22 +1,22 @@
 # project name and programming language
 project('valaffmpeg', ['vala', 'c'], version: '0.1.0')
 
-# Include the translations module
-i18n = import('i18n')
-# define GETTEXT_PACKAGE
-add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
-# Set our translation domain
-add_global_arguments(['-DG_LOG_DOMAIN="@0@"'.format (meson.project_name())], language:'c')
-
-
 # Include the gnome module
 gnome = import('gnome')
+
+vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
+add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
+add_project_arguments(['--enable-experimental'], language: 'vala')
 
 # add resources to the executeable
 dependencies = [
 	dependency('gtk+-3.0', version: '>= 3.20'),
 	dependency('glib-2.0'),
 	dependency('gio-2.0'),
+	dependency('libavutil'),
+#	dependency('libswresample'),
+#	dependency('libavformat'),
+#	dependency('libavcodec'),
     meson.get_compiler('c').find_library('m', required: false),
     meson.get_compiler('vala').find_library('posix'),
 ]

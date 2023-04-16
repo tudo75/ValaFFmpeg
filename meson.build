@@ -14,9 +14,9 @@ dependencies = [
 	dependency('glib-2.0'),
 	dependency('gio-2.0'),
 	dependency('libavutil'),
-#	dependency('libswresample'),
-#	dependency('libavformat'),
-#	dependency('libavcodec'),
+	dependency('libswresample'),
+	dependency('libavcodec'),
+	dependency('libavformat'),
     meson.get_compiler('c').find_library('m', required: false),
     meson.get_compiler('vala').find_library('posix'),
 ]

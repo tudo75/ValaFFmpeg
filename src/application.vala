@@ -17,6 +17,9 @@
  */
 
 using LibAVUtil;
+using LibSWResample;
+using LibAVCodec;
+using LibAVFormat;
 
 namespace ValaFFmpeg {
 
@@ -135,7 +138,34 @@ namespace ValaFFmpeg {
             stdout.printf ("%d ", LibAVUtil.Cpu.CPUCapabilityFlags.VSX);
             stdout.printf ("%d\n", LibAVUtil.Cpu.CPUCapabilityFlags.XOP);
             stdout.printf ("%s\n", "LibAVUtil.Cpu.get_cpu_flags: " + LibAVUtil.Cpu.get_cpu_flags ().to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Cpu.cpu_count: " + LibAVUtil.Cpu.cpu_count ().to_string ());  
+            stdout.printf ("%s\n", "LibAVUtil.Cpu.cpu_count: " + LibAVUtil.Cpu.cpu_count ().to_string ());
+
+
+            /********
+            LibSWResample
+            *********/
+            stdout.printf ("%s\n", "LibSWResample.LIBSWRESAMPLE_BUILD: " + LibSWResample.LIBSWRESAMPLE_BUILD.to_string ());
+            stdout.printf ("%s\n", "LibSWResample.LIBSWRESAMPLE_IDENT: " + LibSWResample.LIBSWRESAMPLE_IDENT);
+
+            stdout.printf ("%s\n", "LibSWResample.version (): " + LibSWResample.version ().to_string ());
+            //stdout.printf ("%s\n", "LibSWResample.configuration (): " + LibSWResample.configuration ());
+            //stdout.printf ("%s\n", "LibSWResample.license (): " + LibSWResample.license ());
+
+            /********
+            LibAVCodec
+            *********/
+            stdout.printf ("%s\n", "LibAVCodec.LIBAVCODEC_IDENT: " + LibAVCodec.LIBAVCODEC_IDENT);
+            stdout.printf ("%s\n", "LibAVCodec.LIBAVCODEC_VERSION_MAJOR: " + LibAVCodec.LIBAVCODEC_VERSION_MAJOR.to_string ());
+            stdout.printf ("%s\n", "LibAVCodec.LIBAVCODEC_VERSION_MINOR: " + LibAVCodec.LIBAVCODEC_VERSION_MINOR.to_string ());
+            stdout.printf ("%s\n", "LibAVCodec.LIBAVCODEC_VERSION_MICRO: " + LibAVCodec.LIBAVCODEC_VERSION_MICRO.to_string ());
+
+            /********
+            LibAVCodec
+            *********/
+            stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_IDENT: " + LibAVFormat.LIBAVFORMAT_IDENT);
+            stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_VERSION_MAJOR: " + LibAVFormat.LIBAVFORMAT_VERSION_MAJOR.to_string ());
+            stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_VERSION_MINOR: " + LibAVFormat.LIBAVFORMAT_VERSION_MINOR.to_string ());
+            stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_VERSION_MICRO: " + LibAVFormat.LIBAVFORMAT_VERSION_MICRO.to_string ());
         }
     }
 }

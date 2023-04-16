@@ -2,7 +2,7 @@ namespace LibAVUtil {
     [CCode (cheader_filename="libavutil/avutil.h")]
     namespace Avutil {
         [CCode (cname="avutil_version", cheader_filename="libavutil/avutil.h")]
-        public int version ();    
+        public int version ();
         [CCode (cname="av_version_info", cheader_filename="libavutil/avutil.h")]
         public string version_info ();
         [CCode (cname="avutil_configuration", cheader_filename="libavutil/avutil.h")]

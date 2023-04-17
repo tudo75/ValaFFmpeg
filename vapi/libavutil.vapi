@@ -1,8 +1,16 @@
 namespace LibAVUtil {
     [CCode (cheader_filename="libavutil/avutil.h")]
-    namespace Avutil {
+    namespace AVUtil {
+        /***********************************************************
+        @brief Return the LibAVUtil.Version.INT constant.
+        ***********************************************************/
         [CCode (cname="avutil_version", cheader_filename="libavutil/avutil.h")]
         public int version ();
+        /***********************************************************
+        @brief Return an informative version string. This usually is the actual release
+        version number or a git commit description. This string has no fixed format
+        and can change any time. It should never be parsed by code.
+        ***********************************************************/
         [CCode (cname="av_version_info", cheader_filename="libavutil/avutil.h")]
         public string* version_info ();
         [CCode (cname="avutil_configuration", cheader_filename="libavutil/avutil.h")]
@@ -54,7 +62,7 @@ namespace LibAVUtil {
         [CCode (cname="AV_FOURCC_MAX_STRING_SIZE", cheader_filename="libavutil/avutil.h")]
         public const int FOURCC_MAX_STRING_SIZE;
 
-    } //end Avutil
+    } //end AVUtil
 
     [CCode (cheader_filename="libavutil/cpu.h")]
     namespace Cpu {

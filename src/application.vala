@@ -38,40 +38,51 @@ namespace ValaFFmpeg {
 
         public Application (string file) {
             /********
-            LibAVUtil.Avutil
+            LibAVUtil.AVUtil
             *********/
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.version: " + LibAVUtil.Avutil.version ().to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.version_info: " + LibAVUtil.Avutil.version_info ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.configuration: " + LibAVUtil.Avutil.configuration ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.license: " + LibAVUtil.Avutil.license ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_media_type: " + LibAVUtil.Avutil.get_media_type (LibAVUtil.Avutil.MediaType.AVMEDIA_TYPE_VIDEO));
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.version: " + LibAVUtil.AVUtil.version ().to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.version_info: " + LibAVUtil.AVUtil.version_info ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.configuration: " + LibAVUtil.AVUtil.configuration ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.license: " + LibAVUtil.AVUtil.license ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_ATTACHMENT): " 
+                                + LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_ATTACHMENT));
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_AUDIO): " 
+                                + LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_AUDIO));
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_DATA): " 
+                                + LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_DATA));
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_SUBTITLE): " 
+                                + LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_SUBTITLE));
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_UNKNOWN): " 
+                                + LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_UNKNOWN));
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_VIDEO): " 
+                                + LibAVUtil.AVUtil.get_media_type (LibAVUtil.AVUtil.MediaType.AVMEDIA_TYPE_VIDEO));
             
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.LAMBDA_SHIFT: " + LibAVUtil.Avutil.LAMBDA_SHIFT.to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.LAMBDA_SCALE: " + LibAVUtil.Avutil.LAMBDA_SCALE.to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.QP2LAMBDA: " + LibAVUtil.Avutil.QP2LAMBDA.to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.LAMBDA_MAX: " + LibAVUtil.Avutil.LAMBDA_MAX.to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.QUALITY_SCALE: " + LibAVUtil.Avutil.QUALITY_SCALE.to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.NOPTS_VALUE: " + LibAVUtil.Avutil.NOPTS_VALUE.to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.TIME_BASE: " + LibAVUtil.Avutil.TIME_BASE.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.LAMBDA_SHIFT: " + LibAVUtil.AVUtil.LAMBDA_SHIFT.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.LAMBDA_SCALE: " + LibAVUtil.AVUtil.LAMBDA_SCALE.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.QP2LAMBDA: " + LibAVUtil.AVUtil.QP2LAMBDA.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.LAMBDA_MAX: " + LibAVUtil.AVUtil.LAMBDA_MAX.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.QUALITY_SCALE: " + LibAVUtil.AVUtil.QUALITY_SCALE.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.NOPTS_VALUE: " + LibAVUtil.AVUtil.NOPTS_VALUE.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.TIME_BASE: " + LibAVUtil.AVUtil.TIME_BASE.to_string ());
 
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_B): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_B).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_BI): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_BI).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_I): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_I).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_NONE): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_NONE).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_P): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_P).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_S): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_S).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_SI): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_SI).to_string ());
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_SP): " 
-                                + LibAVUtil.Avutil.get_picture_type (LibAVUtil.Avutil.PictureType.AV_PICTURE_TYPE_SP).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_B): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_B).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_BI): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_BI).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_I): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_I).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_NONE): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_NONE).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_P): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_P).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_S): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_S).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_SI): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_SI).to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_SP): " 
+                                + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_SP).to_string ());
 
-            stdout.printf ("%s\n", "LibAVUtil.Avutil.FOURCC_MAX_STRING_SIZE: " + LibAVUtil.Avutil.FOURCC_MAX_STRING_SIZE.to_string ());
+            stdout.printf ("%s\n", "LibAVUtil.AVUtil.FOURCC_MAX_STRING_SIZE: " + LibAVUtil.AVUtil.FOURCC_MAX_STRING_SIZE.to_string ());
 
             stdout.printf ("%s\n", "");
             /********

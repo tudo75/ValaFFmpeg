@@ -4,11 +4,11 @@ namespace LibAVUtil {
         [CCode (cname="avutil_version", cheader_filename="libavutil/avutil.h")]
         public int version ();
         [CCode (cname="av_version_info", cheader_filename="libavutil/avutil.h")]
-        public string version_info ();
+        public string* version_info ();
         [CCode (cname="avutil_configuration", cheader_filename="libavutil/avutil.h")]
-        public string configuration ();
+        public string* configuration ();
         [CCode (cname="avutil_license", cheader_filename="libavutil/avutil.h")]
-        public string license ();
+        public string* license ();
 
         [CCode (cname="AVMediaType", cprefix="", cheader_filename="libavutil/avutil.h")]
         public enum MediaType {
@@ -20,7 +20,7 @@ namespace LibAVUtil {
             AVMEDIA_TYPE_ATTACHMENT;
         }
         [CCode (cname="av_get_media_type_string", cheader_filename="libavutil/avutil.h")]
-        public string get_media_type (MediaType media_type);
+        public string* get_media_type (MediaType media_type);
 
         [CCode (cname="FF_LAMBDA_SHIFT", cheader_filename="libavutil/avutil.h")]
         public const int LAMBDA_SHIFT;

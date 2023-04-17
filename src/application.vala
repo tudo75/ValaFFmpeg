@@ -41,32 +41,10 @@ namespace ValaFFmpeg {
             LibAVUtil.Avutil
             *********/
             stdout.printf ("%s\n", "LibAVUtil.Avutil.version: " + LibAVUtil.Avutil.version ().to_string ());
-            // return '4.4.2-0ubuntu0.22.04.1' and the 'double free or corruption (out)' error
-            // stdout.printf ("%s\n", "LibAVUtil.Avutil.version_info: " + LibAVUtil.Avutil.version_info ());
-            
-            // return  
-            // '--prefix=/usr --extra-version=0ubuntu0.22.04.1 --toolchain=hardened
-            //  --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu 
-            //  --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa 
-            //  --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca 
-            //  --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig 
-            //  --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack 
-            //  --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus 
-            //  --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy 
-            //  --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora 
-            //  --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp 
-            //  --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq 
-            //  --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl 
-            //  --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 
-            //  --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 
-            //  --enable-shared' and 'free(): invalid pointer' error
-            // stdout.printf ("%s\n", LibAVUtil.Avutil.configuration ());
-
-            // return 'GPL version 2 or later' and the 'free(): invalid pointer' error
-            // stdout.printf ("%s\n", LibAVUtil.Avutil.license ());
-
-            // return 'video' and 'munmap_chunk(): invalid pointer' error
-            // stdout.printf ("%s\n", LibAVUtil.Avutil.get_media_type (LibAVUtil.Avutil.MediaType.AVMEDIA_TYPE_VIDEO));
+            stdout.printf ("%s\n", "LibAVUtil.Avutil.version_info: " + LibAVUtil.Avutil.version_info ());
+            stdout.printf ("%s\n", "LibAVUtil.Avutil.configuration: " + LibAVUtil.Avutil.configuration ());
+            stdout.printf ("%s\n", "LibAVUtil.Avutil.license: " + LibAVUtil.Avutil.license ());
+            stdout.printf ("%s\n", "LibAVUtil.Avutil.get_media_type: " + LibAVUtil.Avutil.get_media_type (LibAVUtil.Avutil.MediaType.AVMEDIA_TYPE_VIDEO));
             
             stdout.printf ("%s\n", "LibAVUtil.Avutil.LAMBDA_SHIFT: " + LibAVUtil.Avutil.LAMBDA_SHIFT.to_string ());
             stdout.printf ("%s\n", "LibAVUtil.Avutil.LAMBDA_SCALE: " + LibAVUtil.Avutil.LAMBDA_SCALE.to_string ());
@@ -95,6 +73,7 @@ namespace ValaFFmpeg {
 
             stdout.printf ("%s\n", "LibAVUtil.Avutil.FOURCC_MAX_STRING_SIZE: " + LibAVUtil.Avutil.FOURCC_MAX_STRING_SIZE.to_string ());
 
+            stdout.printf ("%s\n", "");
             /********
             LibAVUtil.Cpu
             *********/
@@ -140,7 +119,7 @@ namespace ValaFFmpeg {
             stdout.printf ("%s\n", "LibAVUtil.Cpu.get_cpu_flags: " + LibAVUtil.Cpu.get_cpu_flags ().to_string ());
             stdout.printf ("%s\n", "LibAVUtil.Cpu.cpu_count: " + LibAVUtil.Cpu.cpu_count ().to_string ());
 
-
+            stdout.printf ("%s\n", "");
             /********
             LibSWResample
             *********/
@@ -151,6 +130,7 @@ namespace ValaFFmpeg {
             //stdout.printf ("%s\n", "LibSWResample.configuration (): " + LibSWResample.configuration ());
             //stdout.printf ("%s\n", "LibSWResample.license (): " + LibSWResample.license ());
 
+            stdout.printf ("%s\n", "");
             /********
             LibAVCodec
             *********/
@@ -159,13 +139,16 @@ namespace ValaFFmpeg {
             stdout.printf ("%s\n", "LibAVCodec.LIBAVCODEC_VERSION_MINOR: " + LibAVCodec.LIBAVCODEC_VERSION_MINOR.to_string ());
             stdout.printf ("%s\n", "LibAVCodec.LIBAVCODEC_VERSION_MICRO: " + LibAVCodec.LIBAVCODEC_VERSION_MICRO.to_string ());
 
+            stdout.printf ("%s\n", "");
             /********
-            LibAVCodec
+            LibAVFormat
             *********/
             stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_IDENT: " + LibAVFormat.LIBAVFORMAT_IDENT);
             stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_VERSION_MAJOR: " + LibAVFormat.LIBAVFORMAT_VERSION_MAJOR.to_string ());
             stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_VERSION_MINOR: " + LibAVFormat.LIBAVFORMAT_VERSION_MINOR.to_string ());
             stdout.printf ("%s\n", "LibAVFormat.LIBAVFORMAT_VERSION_MICRO: " + LibAVFormat.LIBAVFORMAT_VERSION_MICRO.to_string ());
+            stdout.printf ("%s\n", "LibAVFormat.AVIO_SEEKABLE_NORMAL: " + LibAVFormat.AVIO_SEEKABLE_NORMAL.to_string ());
+            stdout.printf ("%s\n", "LibAVFormat.AVIO_SEEKABLE_TIME: " + LibAVFormat.AVIO_SEEKABLE_TIME.to_string ());
         }
     }
 }

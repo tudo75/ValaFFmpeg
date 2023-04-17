@@ -13,11 +13,20 @@ namespace LibAVUtil {
         ***********************************************************/
         [CCode (cname="av_version_info", cheader_filename="libavutil/avutil.h")]
         public string* version_info ();
+        /***********************************************************
+        @brief Return the libavutil build-time configuration.
+        ***********************************************************/
         [CCode (cname="avutil_configuration", cheader_filename="libavutil/avutil.h")]
         public string* configuration ();
+        /***********************************************************
+        @brief Return the libavutil license.
+        ***********************************************************/
         [CCode (cname="avutil_license", cheader_filename="libavutil/avutil.h")]
         public string* license ();
-
+        /***********************************************************
+        @addtogroup lavu_media Media Type
+        @brief Media Type
+        ***********************************************************/
         [CCode (cname="AVMediaType", cprefix="", cheader_filename="libavutil/avutil.h")]
         public enum MediaType {
             AVMEDIA_TYPE_UNKNOWN,
@@ -27,24 +36,55 @@ namespace LibAVUtil {
             AVMEDIA_TYPE_SUBTITLE,
             AVMEDIA_TYPE_ATTACHMENT;
         }
+        /***********************************************************
+        @brief Return a string describing the media_type enum, null if media_type
+        is unknown.
+        ***********************************************************/
         [CCode (cname="av_get_media_type_string", cheader_filename="libavutil/avutil.h")]
-        public string* get_media_type (MediaType media_type);
+        public string* get_media_type (
+            MediaType media_type
+        );
+        /***********************************************************
+        @defgroup lavu_const Constants
 
+        @defgroup lavu_enc Encoding specific
+
+        @note those definition should move to avcodec
+        ***********************************************************/
         [CCode (cname="FF_LAMBDA_SHIFT", cheader_filename="libavutil/avutil.h")]
         public const int LAMBDA_SHIFT;
         [CCode (cname="FF_LAMBDA_SCALE", cheader_filename="libavutil/avutil.h")]
         public const int LAMBDA_SCALE;
+        /***********************************************************
+        @brief Factor to convert from H.263 QP to lambda
+        ***********************************************************/
         [CCode (cname="FF_QP2LAMBDA", cheader_filename="libavutil/avutil.h")]
         public const int QP2LAMBDA;
         [CCode (cname="FF_LAMBDA_MAX", cheader_filename="libavutil/avutil.h")]
         public const int LAMBDA_MAX;
         [CCode (cname="FF_QUALITY_SCALE", cheader_filename="libavutil/avutil.h")]
         public const int QUALITY_SCALE; // FIXME maybe remove
+        /***********************************************************
+        @defgroup lavu_time Timestamp specific
+
+        FFmpeg internal timebase and timestamp definitions
+        ***********************************************************/
+
+        /***********************************************************
+        @brief Undefined timestamp value
+
+        Usually reported by demuxer that work on containers that do not provide
+        either pts or dts.
+        ***********************************************************/
         [CCode (cname="AV_NOPTS_VALUE", cheader_filename="libavutil/avutil.h")]
         public const int64 NOPTS_VALUE;
         [CCode (cname="AV_TIME_BASE", cheader_filename="libavutil/avutil.h")]
         public const int TIME_BASE;
+        /***********************************************************
+        @defgroup lavu_picture Image related
 
+        AVPicture types, pixel formats and basic image planes manipulation.
+        ***********************************************************/
         [CCode (cprefix="", cheader_filename="libavutil/avutil.h")]
         public enum PictureType {
             AV_PICTURE_TYPE_NONE,
@@ -56,12 +96,32 @@ namespace LibAVUtil {
             AV_PICTURE_TYPE_SP,
             AV_PICTURE_TYPE_BI
         }
-        [CCode (cname="av_get_picture_type_char", cheader_filename="libavutil/avutil.h")]
-        public char get_picture_type (PictureType pict_type);
+        /***********************************************************
+        @brief Return a single letter to describe the given picture type
+        pict_type.
 
+        @param[in] pict_type the picture type @return a single character
+        representing the picture type, '?' if pict_type is unknown
+        ***********************************************************/
+        [CCode (cname="av_get_picture_type_char", cheader_filename="libavutil/avutil.h")]
+        public char get_picture_type (
+            PictureType pict_type
+        );
+        /***********************************************************
+        @brief Fill the provided buffer with a string containing a FourCC (four-character
+        code) representation.
+
+        @param buffer a buffer with size in bytes of at least AV_FOURCC_MAX_STRING_SIZE
+        @param fourcc the fourcc to represent
+        @return the buffer in input
+        ***********************************************************/
         [CCode (cname="AV_FOURCC_MAX_STRING_SIZE", cheader_filename="libavutil/avutil.h")]
         public const int FOURCC_MAX_STRING_SIZE;
-
+        
+        [CCode (cname="av_fourcc2str", cheader_filename="libavutil/avutil.h")]
+        public string* fourcc2str (
+            uint32 fourcc
+        );
     } //end AVUtil
 
     [CCode (cheader_filename="libavutil/cpu.h")]

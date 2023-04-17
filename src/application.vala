@@ -83,6 +83,8 @@ namespace ValaFFmpeg {
                                 + LibAVUtil.AVUtil.get_picture_type (LibAVUtil.AVUtil.PictureType.AV_PICTURE_TYPE_SP).to_string ());
 
             stdout.printf ("%s\n", "LibAVUtil.AVUtil.FOURCC_MAX_STRING_SIZE: " + LibAVUtil.AVUtil.FOURCC_MAX_STRING_SIZE.to_string ());
+            stdout.printf ("%s\n","LibAVUtil.AVUtil.fourcc2str (0x34363248): " + LibAVUtil.AVUtil.fourcc2str (0x34363248));
+            stdout.printf ("%s\n","LibAVUtil.AVUtil.fourcc2str (0x32595559): " + LibAVUtil.AVUtil.fourcc2str (0x32595559));
 
             stdout.printf ("%s\n", "");
             /********
